@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Income and Expense Calculator</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="bg-gray-100 flex justify-center p-4">
+    <header>
+      <h1 class="text-4xl text-center font-bold p-2 text-blue-600">
+        Income & Expense Calculator
+      </h1>
+      <p class="text-center p-2">Track income ,expense and balance</p>
+      <div class="mt-4 grid grid-cols-1 sm:grid-cols-3 gap-4">
+        <div class="col-span-1 sm:col-span-2 p-4 rounded-lg bg-white-100">
+          <div class="text-sm text-black-100">Net balance</div>
+          <div class="text-2xl font-bold" id="netBalace">₹0.00</div>
+          <div class="space-y-2 p-4 rounded-lg bg-blue-100">
+            <div class="flex justify-between text-sm">
+              <span class="text-blue-600">Expense</span>
+              <span id="totalExpense" class="font-medium money-negative"
+                >₹ 0.00</span
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Form -->
+
+    <section class="bg-pink p-4 rounded-2xl card-shadow mb-4">
+      <form id="transactionForm" class="space-y-2">
+        <div>
+          <label
+            class="block text-sm font-medium text-blue-600"
+            for="description"
+            >Description</label
+          >
+          <input
+            type="text"
+            id="description"
+            name="description"
+            placeholder="e.g Salary Grocery"
+            class="mt-1 block-w-full rounded-md border-blue-200 p-2"
+          />
+        </div>
+      </form>
+    </section>
+  </body>
+</html>
