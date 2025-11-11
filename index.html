@@ -18,6 +18,12 @@
           <div class="text-2xl font-bold" id="netBalace">₹0.00</div>
           <div class="space-y-2 p-4 rounded-lg bg-blue-100">
             <div class="flex justify-between text-sm">
+              <span class="text-blue-600">Income</span>
+              <span id="totalIncome" class="font-medium money-positive"
+                >₹0.00</span
+              >
+            </div>
+            <div class="flex justify-between text-sm">
               <span class="text-blue-600">Expense</span>
               <span id="totalExpense" class="font-medium money-negative"
                 >₹ 0.00</span
@@ -99,7 +105,10 @@
           >
             Add
           </button>
-          <button class="px-4 py-2 bg-red-500 text-white rounded-lg">
+          <button
+            id="resetFormBtn"
+            class="px-4 py-2 bg-red-500 text-white rounded-lg"
+          >
             Reset
           </button>
         </div>
