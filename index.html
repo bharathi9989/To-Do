@@ -6,170 +6,178 @@
     <title>Income and Expense Calculator</title>
     <script src="https://cdn.tailwindcss.com"></script>
   </head>
-  <body class="bg-gray-100 flex-item-start min-h-screen justify-center p-4">
-    <header>
-      <h1 class="text-4xl text-center font-bold p-2 text-blue-600">
-        Income & Expense Calculator
-      </h1>
-      <p class="text-center p-2">Track income ,expense and balance</p>
-      <div class="mt-4 grid grid-cols-1 sm:grid-cols-3 gap-4">
-        <div class="col-span-1 sm:col-span-2 p-4 rounded-lg bg-white-100">
-          <div class="text-sm text-black-100">Net balance</div>
-          <div class="text-2xl font-bold" id="netBalace">₹0.00</div>
-          <div class="space-y-2 p-4 rounded-lg bg-blue-100">
-            <div class="flex justify-between text-sm">
-              <span class="text-blue-600">Income</span>
-              <span id="totalIncome" class="font-medium money-positive"
-                >₹0.00</span
-              >
-            </div>
-            <div class="flex justify-between text-sm">
-              <span class="text-blue-600">Expense</span>
-              <span id="totalExpense" class="font-medium money-negative"
-                >₹ 0.00</span
-              >
+  <body>
+    <div class="bg-gray-100 flex-item-start min-h-screen justify-center p-4">
+      <header>
+        <h1 class="text-6xl text-center font-bold p-2 text-blue-600">
+          Income & Expense Calculator
+        </h1>
+        <p class="text-center p-2">Track income, expense and balance</p>
+        <div class="mt-4 grid grid-cols-1 sm:grid-cols-3 gap-4">
+          <div class="col-span-1 sm:col-span-2 p-4 rounded-lg bg-white-100">
+            <div class="text-sm text-black-100">Net balance</div>
+            <div class="text-2xl font-bold" id="netBalace">₹0.00</div>
+            <div class="space-y-2 p-4 rounded-lg bg-blue-100">
+              <div class="flex justify-between text-sm">
+                <span class="text-blue-600">Total Income</span>
+                <span id="totalIncome" class="font-medium money-positive"
+                  >₹0.00</span
+                >
+              </div>
+              <div class="flex justify-between text-sm">
+                <span class="text-blue-600">Expense</span>
+                <span id="totalExpense" class="font-medium money-negative"
+                  >₹ 0.00</span
+                >
+              </div>
             </div>
           </div>
         </div>
-      </div>
-    </header>
+      </header>
 
-    <!-- Form -->
+      <!-- Form -->
 
-    <section class="bg-pink p-4 rounded-2xl card-shadow">
-      <form id="transactionForm" class="space-y-2">
-        <div>
-          <label
-            class="block text-sm font-medium text-blue-600"
-            for="description"
-            >Description</label
-          >
-          <input
-            type="text"
-            id="description"
-            name="description"
-            placeholder="e.g Salary Grocery"
-            class="mt-1 block-w-full rounded-md border-blue-200 p-2"
-            required
-          />
-        </div>
-        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+      <section class="bg-pink p-4 rounded-2xl card-shadow">
+        <form id="transactionForm" class="space-y-2">
           <div>
-            <label for="amount" class="block text-sm font-medium text-blue-600"
-              >Amount (₹)</label
+            <label
+              class="block text-sm font-medium text-blue-600"
+              for="description"
+              >Description</label
             >
             <input
-              type="number"
-              id="amount"
-              name="amount"
-              step="1"
-              min="0"
-              placeholder="0.00 ₹"
+              type="text"
+              id="description"
+              name="description"
+              placeholder="e.g Salary Grocery"
               class="mt-1 block-w-full rounded-md border-blue-200 p-2"
               required
             />
           </div>
-          <div class="">
-            <label class="block text-sm font-medium text-blue-600">Type</label>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+            <div>
+              <label
+                for="amount"
+                class="block text-sm font-medium text-blue-600"
+                >Amount (₹)</label
+              >
+              <input
+                type="number"
+                id="amount"
+                name="amount"
+                step="1"
+                min="0"
+                placeholder="0.00 ₹"
+                class="mt-1 block-w-full rounded-md border-blue-200 p-2"
+                required
+              />
+            </div>
+            <div class="">
+              <label class="block text-sm font-medium text-blue-600"
+                >Type</label
+              >
 
-            <div class="mt-1 flex gap-4 item-center">
-              <label class="inline-flex item-center">
-                <input
-                  type="radio"
-                  name="type"
-                  value="income"
-                  checked
-                  class="mr-2"
-                />
-                Income
-              </label>
+              <div class="mt-1 flex gap-4 item-center">
+                <label class="inline-flex item-center">
+                  <input
+                    type="radio"
+                    name="type"
+                    value="income"
+                    checked
+                    class="mr-2"
+                  />
+                  Income
+                </label>
 
-              <label class="inline-flex item-center">
-                <input
-                  type="radio"
-                  name="type"
-                  value="expense"
-                  checked
-                  class="mr-2"
-                />
-                Expense
-              </label>
+                <label class="inline-flex item-center">
+                  <input
+                    type="radio"
+                    name="type"
+                    value="expense"
+                    checked
+                    class="mr-2"
+                  />
+                  Expense
+                </label>
+              </div>
             </div>
           </div>
+          <div class="flex gap-3">
+            <button
+              id="saveBtn"
+              type="submit"
+              class="px-4 py-2 bg-blue-500 text-white rounded-lg"
+            >
+              Add
+            </button>
+            <button
+              id="resetFormBtn"
+              class="px-4 py-2 bg-red-500 text-white rounded-lg"
+            >
+              Reset
+            </button>
+          </div>
+        </form>
+      </section>
+
+      <!-- Filter -->
+
+      <section class="bg-blue p-8 rounded-2xl card-shadow mt-5">
+        <div class="flex item-center">
+          <div class="text-sm text-blue-600 font-medium">Filter</div>
+          <label for="" class="inline-flex item-center">
+            <input
+              type="radio"
+              name="filter"
+              value="all"
+              class="ml-2 filter-radio"
+            />
+            All
+          </label>
+
+          <label for="" class="inline-flex item-center">
+            <input
+              type="radio"
+              name="filter"
+              value="income"
+              class="ml-2 filter-radio"
+            />
+            Income
+          </label>
+
+          <label for="" class="inline-flex item-center">
+            <input
+              type="radio"
+              name="filter"
+              value="expense"
+              class="ml-2 filter-radio"
+            />
+            Expense
+          </label>
         </div>
-        <div class="flex gap-3">
-          <button
-            id="saveBtn"
-            type="submit"
-            class="px-4 py-2 bg-blue-500 text-white rounded-lg"
-          >
-            Add
-          </button>
-          <button
-            id="resetFormBtn"
-            class="px-4 py-2 bg-red-500 text-white rounded-lg"
-          >
-            Reset
-          </button>
+      </section>
+
+      <p id="errorMsg" class="text-red-500 text-sm mt-2 hidden"></p>
+
+      <!-- Entries List -->
+
+      <section
+        id="entriesSection"
+        class="bg-blue-100 p-8 rounded-2xl card-shadow mt-4"
+      >
+        <h2 class="text-lg font-medium mb-3 text-blue-600">Entries</h2>
+        <ul id="entriesList" class="space-y-3"></ul>
+
+        <div id="emptyState" class="text-sm text-black-500 mt-4">
+          No entres yet add on income and expense above
         </div>
-      </form>
-    </section>
+      </section>
+      <footer class="text-xs text-blue-600 mt-4">
+        Tip:click edit to update on exsisting entry.Deleting removes it forever
+        from local storage
+      </footer>
 
-    <!-- Filter -->
-
-    <section class="bg-blue p-8 rounded-2xl card-shadow mt-5">
-      <div class="flex item-center">
-        <div class="text-sm text-blue-600 font-medium">Filter</div>
-        <label for="" class="inline-flex item-center">
-          <input
-            type="radio"
-            name="filter"
-            value="all"
-            class="ml-2 filter-radio"
-          />
-          All
-        </label>
-
-        <label for="" class="inline-flex item-center">
-          <input
-            type="radio"
-            name="filter"
-            value="income"
-            class="ml-2 filter-radio"
-          />
-          Income
-        </label>
-
-        <label for="" class="inline-flex item-center">
-          <input
-            type="radio"
-            name="filter"
-            value="expense"
-            class="ml-2 filter-radio"
-          />
-          Expense
-        </label>
-      </div>
-    </section>
-
-    <!-- Entries List -->
-
-    <section
-      id="entriesSection"
-      class="bg-blue-100 p-8 rounded-2xl card-shadow mt-4"
-    >
-      <h2 class="text-lg font-medium mb-3 text-blue-600">Entries</h2>
-      <ul id="entriesList" class="space-y-3"></ul>
-
-      <div id="emptyState" class="text-sm text-black-500 mt-4">
-        No entres yet add on income and expense above
-      </div>
-    </section>
-    <footer class="text-xs text-blue-600 mt-4">
-      Tip:click edit to update on exsisting entry.Deleting removes it forever
-      from local storage
-    </footer>
-
-    <script src="script.js"></script>
+      <script src="script.js"></script>
+    </div>
   </body>
 </html>
