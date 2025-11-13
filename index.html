@@ -7,16 +7,24 @@
     <script src="https://cdn.tailwindcss.com"></script>
   </head>
   <body>
-    <div class="bg-gray-100 flex-item-start min-h-screen justify-center p-4">
+    <div
+      class="min-h-screen bg-cover bg-center bg-no-repeat p-4"
+      style="background-image: url('/assets/8423661.jpg')"
+    >
       <header>
-        <h1 class="text-6xl text-center font-bold p-2 text-blue-600">
-          Income & Expense Calculator
+        <h1 class="text-6xl text-center font-bold p-2 text-white">
+          <span class="text-orange-500">Income</span> & <span>Expense</span>
+          <span class="text-black">Calculator</span>
         </h1>
-        <p class="text-center p-2">Track income, expense and balance</p>
+        <p class="text-center text-white p-2">
+          Track income, expense and balance
+        </p>
         <div class="mt-4 grid grid-cols-1 sm:grid-cols-3 gap-4">
           <div class="col-span-1 sm:col-span-2 p-4 rounded-lg bg-white-100">
-            <div class="text-sm text-black-100">Net balance</div>
-            <div class="text-2xl font-bold" id="netBalace">₹0.00</div>
+            <div class="text-2xl text-gray-100">Net balance</div>
+            <div class="text-2xl text-orange-500 font-bold" id="netBalace">
+              ₹0.00
+            </div>
             <div class="space-y-2 p-4 rounded-lg bg-blue-100">
               <div class="flex justify-between text-sm">
                 <span class="text-blue-600">Total Income</span>
@@ -41,7 +49,7 @@
         <form id="transactionForm" class="space-y-2">
           <div>
             <label
-              class="block text-sm font-medium text-blue-600"
+              class="block text-sm font-medium text-white"
               for="description"
               >Description</label
             >
@@ -56,9 +64,7 @@
           </div>
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
             <div>
-              <label
-                for="amount"
-                class="block text-sm font-medium text-blue-600"
+              <label for="amount" class="block text-sm font-medium text-white"
                 >Amount (₹)</label
               >
               <input
@@ -73,23 +79,21 @@
               />
             </div>
             <div class="">
-              <label class="block text-sm font-medium text-blue-600"
-                >Type</label
-              >
+              <label class="block text-sm font-medium text-white">Type</label>
 
               <div class="mt-1 flex gap-4 item-center">
-                <label class="inline-flex item-center">
+                <label class="inline-flex item-center text-white">
                   <input
                     type="radio"
                     name="type"
                     value="income"
                     checked
-                    class="mr-2"
+                    class="mr-2 text-white"
                   />
                   Income
                 </label>
 
-                <label class="inline-flex item-center">
+                <label class="inline-flex item-center text-white">
                   <input
                     type="radio"
                     name="type"
@@ -106,7 +110,7 @@
             <button
               id="saveBtn"
               type="submit"
-              class="px-4 py-2 bg-blue-500 text-white rounded-lg"
+              class="px-4 py-2 bg-green-500 text-white rounded-lg"
             >
               Add
             </button>
@@ -124,8 +128,8 @@
 
       <section class="bg-blue p-8 rounded-2xl card-shadow mt-5">
         <div class="flex item-center">
-          <div class="text-sm text-blue-600 font-medium">Filter</div>
-          <label for="" class="inline-flex item-center">
+          <div class="text-xl text-orange-500 font-medium">Filter</div>
+          <label for="all" class="inline-flex item-center text-xl text-white">
             <input
               type="radio"
               name="filter"
@@ -135,7 +139,10 @@
             All
           </label>
 
-          <label for="" class="inline-flex item-center">
+          <label
+            for="income"
+            class="inline-flex text-white item-center text-xl"
+          >
             <input
               type="radio"
               name="filter"
@@ -145,7 +152,10 @@
             Income
           </label>
 
-          <label for="" class="inline-flex item-center">
+          <label
+            for="expense"
+            class="inline-flex item-center text-white text-xl"
+          >
             <input
               type="radio"
               name="filter"
@@ -172,7 +182,7 @@
           No entres yet add on income and expense above
         </div>
       </section>
-      <footer class="text-xs text-blue-600 mt-4">
+      <footer class="text-xs text-white mt-4">
         Tip:click edit to update on exsisting entry.Deleting removes it forever
         from local storage
       </footer>
